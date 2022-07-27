@@ -11,10 +11,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-     steps:
+    steps:
     - uses: actions/checkout@v1
     - name: Build & Push Image
       run: |
-        echo "${{ secrets.DOCKERPW }}" | docker login -u "shray9" --password-stdin
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "" --password-stdin
         docker image build -t shray9/gitaction:v1 .
         docker push shray9/gitaction:v1
